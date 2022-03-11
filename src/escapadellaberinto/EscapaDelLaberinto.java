@@ -4,6 +4,8 @@
  */
 package escapadellaberinto;
 
+import Frontend.Gameplay;
+
 /**
  *
  * @author jose_
@@ -14,7 +16,8 @@ public class EscapaDelLaberinto {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Gameplay game = new Gameplay();
+        game.play();
     }
     
 }
