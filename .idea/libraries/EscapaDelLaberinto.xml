@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="EscapaDelLaberinto">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/EscapaDelLaberinto.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

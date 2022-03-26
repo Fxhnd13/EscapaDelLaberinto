@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Backend.Objects;
+package backend.objects;
 
 /**
  *
@@ -12,7 +12,7 @@ public class Position {
     
     private int x, y;
     
-    public Position(int x, int y){
+    public Position(int y, int x){
         this.x = x;
         this.y = y;
     }

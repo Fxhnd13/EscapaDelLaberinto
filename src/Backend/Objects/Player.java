@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Backend.Objects;
+package backend.objects;
 
 /**
  *
@@ -11,10 +11,12 @@ package Backend.Objects;
 public class Player {
     
     private int gold, movements;
+    private int errors;
     
     public Player(){
         this.gold = 0;
         this.movements = 0;
+        this.errors = 0;
     }
 
     public int getGold() {
@@ -32,5 +34,20 @@ public class Player {
     public void setMovements(int movements) {
         this.movements = movements;
     }
+
+    public void setErrors(int errors) {
+        this.errors = errors;
+    }
+
+    public int getErrors() {
+        return errors;
+    }
     
+    public void plusError(){
+        this.errors++;
+    }
+    
+    public void plusMovement(){
+        this.movements++;
+    }
 }

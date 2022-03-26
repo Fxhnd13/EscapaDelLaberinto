@@ -10,22 +10,14 @@ import javax.swing.JLabel;
 
 /**
  *
- * @author jose_
+ * @author Soberanis
  */
-public class PathCell implements Cell {
-    
-    public PathCell() {
-    }
+public class HiddenCell implements Cell{
 
     @Override
     public void setImage(boolean isVisible, JLabel label) {
-        ImageIcon image = null;
-        if(isVisible){
-            image = new ImageIcon(getClass().getResource(CellResource.PATH_CELL.resource()));
-        }else{
-            image = new ImageIcon(getClass().getResource(CellResource.HIDDEN_CELL.resource()));
-        }
-        label.setIcon(new ImageIcon(image.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT)));
+        ImageIcon imagen = new ImageIcon(getClass().getResource(CellResource.HIDDEN_CELL.resource()));
+        label.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT)));
     }
     
     @Override

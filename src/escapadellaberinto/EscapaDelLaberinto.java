@@ -4,7 +4,8 @@
  */
 package escapadellaberinto;
 
-import Frontend.Gameplay;
+import frontend.GameView;
+
 
 /**
  *
@@ -16,8 +17,8 @@ public class EscapaDelLaberinto {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Gameplay game = new Gameplay();
-        game.play();
+        GameView game = new GameView();
+        game.setVisible(true);
     }
     
 }
