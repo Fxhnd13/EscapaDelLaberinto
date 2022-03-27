@@ -25,11 +25,11 @@ import javax.swing.JOptionPane;
 public class MapCreator {
     
     public Map createMap(){
-        Cell[][] cells = null;
+        Map map = null;
         try {   
             File file = selectFile();
             if(file!=null){
-                cells = setDimensions(file);
+                Cell[][] cells = setDimensions(file);
                 Scanner sc = new Scanner(file);
                 int i=0,j=0;
                 while(sc.hasNext()){
@@ -48,13 +48,13 @@ public class MapCreator {
                     i++;
                 }
                 fillNullCells(cells);
+                String name = JOptionPane.showInputDialog(null, "Por favor ingrese el nombre que tendrá el mapa cargado", "Nombre mapa", JOptionPane.INFORMATION_MESSAGE);
+                map = new Map(cells.length,cells[0].length, name);
+                map.setCells(cells);
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MapCreator.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String name = JOptionPane.showInputDialog(null, "Por favor ingrese el nombre que tendrá el mapa cargado", "Nombre mapa", JOptionPane.INFORMATION_MESSAGE);
-        Map map = new Map(cells.length,cells[0].length, name);
-        map.setCells(cells);
         return map;
     }
     
