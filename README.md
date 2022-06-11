@@ -24,13 +24,10 @@ El formato para cargar un mapa es el siguiente:
 
 Aunque tener en consideración que el archivo se encontrará con formato csv, por lo que para dibujar un mapa se deberá de ver aproximadamente así:
 
-`
 #,#,#,#,#,#,#,#,#,#  
 #,O,O,O,G-2,O,O,O,O,S-2  
 #,O,O,O,O,G-2,O,O,O,#  
 #,O,G-3,O,O,O,O,O,O,#  
 #,#,#,#,#,#,#,#,#,#  
-
-`
 
 Donde el - seguido de las casillas G y S, indica la cantidad de oro pra cada caso.
