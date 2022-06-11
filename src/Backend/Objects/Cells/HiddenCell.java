@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 /**
  *
  * @author Soberanis
+ * Clase que sirve para mostrar en pantalla las casillas ocultas o bien, las que se encuentran fuera de los limites del mapa
  */
 public class HiddenCell implements Cell{
 

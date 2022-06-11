@@ -16,6 +16,7 @@ import java.util.ArrayList;
 /**
  *
  * @author jose_
+ * Clase encargada de almacenar la información de un mapa, sus casillas, la posición del jugador, el nombre, etc.
  */
 public class Map {
     
@@ -28,11 +29,15 @@ public class Map {
         this.name = name;
     }
 
+    /**
+     * Constructor para cuando se inicia una partida nueva, se hace un clon del mapa para evitar modificar la instancia que utilizamos de guia
+     * @param map Mapa que queremos 'copiar'
+     */
     public Map(Map map) {
         this.name = map.getName();
         this.cells = new Cell[map.getCells().length][map.getCells()[0].length];
         for (int i = 0; i < map.getCells().length; i++) {
-            for (int j = 0; j < map.getCells().length; j++) {
+            for (int j = 0; j < map.getCells()[i].length; j++) {
                 try {
                     this.cells[i][j] = (Cell) map.getCells()[i][j].clone();
                 } catch (CloneNotSupportedException ex) {
@@ -42,6 +47,11 @@ public class Map {
         }
     }
     
+    /**
+     * Metodo para cambiar la posición del jugador
+     * @param x Cantidad de espacios en x que se moverá el jugador
+     * @param y Cantidad de espacios en y que se moverá el jugador
+     */
     public void movePlayer(int x, int y){
         try{
             PlayerCell playerCell = ((PlayerCell) this.cells[playerPosition.getY()][playerPosition.getX()]); //Obtenemos la celda donde esta el jugador
@@ -62,6 +72,12 @@ public class Map {
         }
     }
     
+    /**
+     * Metodo para obtener las casillas que se visualizarán en el mapa
+     * @param visionRange Parametro del rango de visión del jugador
+     * @param isLinternOn Parametro que indica si el jugador tiene linterna activa o no
+     * @return 
+     */
     public ArrayList<Cell> getSurroundedCells(int visionRange, boolean isLinternOn){
         int visionValue = (visionRange-1)/2;
         ArrayList<Cell> cells = new ArrayList<Cell>();
@@ -83,6 +99,9 @@ public class Map {
         return cells;
     }
 
+    /**
+     * Metodo para colocar al jugador en una posición al azar sobre el mapa
+     */
     public void putPlayer() {
         removePlayer();
         boolean isPlayerInMap = false;
@@ -98,6 +117,10 @@ public class Map {
         }
     }
 
+    /**
+     * Metodo para cambiar una casilla de 'camino' a una casilla de oro, al penalizar al jugador
+     * @param lostGold Cantidad de oro que tendrá la nueva casilla creada
+     */
     public void setPathCellToGoldCell(int lostGold) {
         boolean isGoldInCell = false;
         while(!isGoldInCell){
@@ -110,6 +133,9 @@ public class Map {
         }
     }
     
+    /**
+     * Eliminar al jugador del mapa
+     */
     private void removePlayer(){
         if(this.playerPosition != null){
             this.cells[this.playerPosition.getY()][this.playerPosition.getX()] = new PathCell();
@@ -117,10 +143,18 @@ public class Map {
         }
     }
     
+    /**
+     * Obtiene la casilla en la que se encuentra el jugador
+     * @return Casilla del jugador
+     */
     public PlayerCell getPlayerCell(){
         return (PlayerCell) this.cells[this.playerPosition.getY()][this.playerPosition.getX()];
     }
     
+    /**
+     * Metodo que dibuja el mapa en consola
+     * @return Cadena con el mapa dibujado
+     */
     public String toString(){
         String map = "";
         for (int i = 0; i < this.cells.length; i++) {

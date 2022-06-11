@@ -7,6 +7,7 @@ package backend.objects.cells;
 /**
  *
  * @author Soberanis
+ * Clase enum que almacena las rutas con las imagenes del juego
  */
 public enum CellResource {
     GOLD_CELL("/media/moneda.jpg"),

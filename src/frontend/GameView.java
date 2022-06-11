@@ -208,10 +208,18 @@ public class GameView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Metodo que muestra en pantalla el selector de mapa (cuando ya hay mapas cargados)
+     * @param evt 
+     */
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         this.mapSelectorDialog.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    /**
+     * Metodo que se ejecuta cuando se activa o desactiva la linterna
+     * @param evt 
+     */
     private void linternCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_linternCheckboxActionPerformed
         if(this.gameController.isInActiveGame()){
             this.paintMap();
@@ -221,6 +229,10 @@ public class GameView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_linternCheckboxActionPerformed
 
+    /**
+     * Metodo que se ejecuta cuando en el cuadro de texto se recibe un teclaso de una flecha
+     * @param evt 
+     */
     private void inputTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inputTextKeyPressed
         //keyPressedArea.setText(keyPressedArea.getText()+"\n"+evt.getKeyCode());
         if(this.gameController.isInActiveGame()){
@@ -232,6 +244,10 @@ public class GameView extends javax.swing.JFrame {
         this.inputText.setText("");
     }//GEN-LAST:event_inputTextKeyPressed
 
+    /**
+     * Metodo que se ejecuta cuando presionamos el boton de recoger oro
+     * @param evt 
+     */
     private void pickGoldButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pickGoldButtonActionPerformed
         if(this.gameController.isInActiveGame()){
             this.gameController.pickUpGold();
@@ -241,10 +257,18 @@ public class GameView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_pickGoldButtonActionPerformed
 
+    /**
+     * Metodo que se ejecuta cuando cargamos un nuevo mapa
+     * @param evt 
+     */
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         this.gameController.createNewMap(mapSelectorComboBox);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    /**
+     * Metodo que se ejecuta cuando seleccionamos un mapa e iniciamos una nueva partida
+     * @param evt 
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if(mapSelectorComboBox.getSelectedIndex()!= -1){
             this.gameController.selectMap(mapSelectorComboBox.getSelectedIndex());
@@ -255,6 +279,10 @@ public class GameView extends javax.swing.JFrame {
         this.mapSelectorDialog.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    /**
+     * Metodo que se ejecuta cuando seleccionamos la opción de salir del mapa
+     * @param evt 
+     */
     private void outButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_outButtonActionPerformed
         if(this.gameController.isInActiveGame()){
             boolean requiredGold = this.gameController.exitMap();
@@ -271,6 +299,10 @@ public class GameView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_outButtonActionPerformed
 
+    /**
+     * Metodo que se ejecuta cuando seleccionamos la opción de oro requerido
+     * @param evt 
+     */
     private void goldRequiredButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goldRequiredButtonActionPerformed
         if(this.gameController.isInActiveGame()){
             int requiredGold = this.gameController.goldRequired();
@@ -320,6 +352,9 @@ public class GameView extends javax.swing.JFrame {
     
     //-------------------------------------------------METODOS PROPIOS-------------------------------------------------------
     
+    /**
+     * Metodo para pintar el mapa en la interfaz gráfica
+     */
     private void paintMap(){
         ArrayList<Cell> cellsToPaint = this.gameController.getActiveGame().getMap().getSurroundedCells(VISION_RANGE, this.linternCheckbox.isSelected());
         for (int i = 0; i < cellsToPaint.size(); i++) {
@@ -328,6 +363,9 @@ public class GameView extends javax.swing.JFrame {
         System.out.println(this.gameController.getActiveGame().toString());
     }
     
+    /**
+     * Metodo para verificar si el jugador ya llegó a su limite de errores
+     */
     private void verifyErrors(){
         if(this.gameController.verifyErrors()){
             JOptionPane.showMessageDialog(null, "El juego ha terminado, has ingresado muchos comandos incorrectos","Fin",JOptionPane.INFORMATION_MESSAGE);
@@ -335,10 +373,16 @@ public class GameView extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Metodo de mensaje informativo
+     */
     private void showInactiveGameMessage() {
         JOptionPane.showMessageDialog(null,"No se encuentra en una partida activa","Error",JOptionPane.ERROR_MESSAGE);
     }
     
+    /**
+     * Metodo de iniciacion para decirle al juego de qué tamaño queremos la cuadricula de visión del jugador
+     */
     private void doGridLayout(){
         this.mapPanel.setLayout(new GridLayout(VISION_RANGE, VISION_RANGE));
         int height = mapPanel.getHeight()/VISION_RANGE;

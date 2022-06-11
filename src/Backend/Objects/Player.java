@@ -7,6 +7,7 @@ package backend.objects;
 /**
  *
  * @author jose_
+ * Clase que almacena la información de un jugador
  */
 public class Player {
     

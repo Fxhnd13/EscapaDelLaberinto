@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 /**
  *
  * @author jose_
+ * Clase que almacena la información de una casilla de tipo camino
  */
 public class PathCell implements Cell {
     

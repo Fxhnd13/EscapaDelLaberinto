@@ -7,6 +7,7 @@ package backend.objects;
 /**
  *
  * @author jose_
+ * Clase que almacena la posición de algo (utilidad meramente)
  */
 public class Position {
     

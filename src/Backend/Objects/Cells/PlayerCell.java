@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 /**
  *
  * @author jose_
+ * Clase que almacena la información de una casilla de jugador
  */
 public class PlayerCell implements Cell {
     

@@ -2,6 +2,23 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Soberanis/Documents/NetBeansProjects/EscapaDelLaberinto/src/Backend/Objects/Cells/PathCell.java</file>
+            <file>file:/C:/Users/Soberanis/Documents/NetBeansProjects/EscapaDelLaberinto/src/Backend/Objects/Map.java</file>
+            <file>file:/C:/Users/Soberanis/Documents/NetBeansProjects/EscapaDelLaberinto/src/Backend/Objects/Cells/Cell.java</file>
+            <file>file:/C:/Users/Soberanis/Documents/NetBeansProjects/EscapaDelLaberinto/src/Backend/Objects/Cells/WallCell.java</file>
+            <file>file:/C:/Users/Soberanis/Documents/NetBeansProjects/EscapaDelLaberinto/src/Backend/Objects/Game.java</file>
+            <file>file:/C:/Users/Soberanis/Documents/NetBeansProjects/EscapaDelLaberinto/src/Backend/Objects/Cells/CellResource.java</file>
+            <file>file:/C:/Users/Soberanis/Documents/NetBeansProjects/EscapaDelLaberinto/src/Backend/Objects/Cells/PlayerCell.java</file>
+            <file>file:/C:/Users/Soberanis/Documents/NetBeansProjects/EscapaDelLaberinto/src/escapadellaberinto/EscapaDelLaberinto.java</file>
+            <file>file:/C:/Users/Soberanis/Documents/NetBeansProjects/EscapaDelLaberinto/src/Backend/Objects/Cells/GoldCell.java</file>
+            <file>file:/C:/Users/Soberanis/Documents/NetBeansProjects/EscapaDelLaberinto/src/Backend/Objects/Cells/HiddenCell.java</file>
+            <file>file:/C:/Users/Soberanis/Documents/NetBeansProjects/EscapaDelLaberinto/src/Backend/utilities/MapCreator.java</file>
+            <file>file:/C:/Users/Soberanis/Documents/NetBeansProjects/EscapaDelLaberinto/src/Backend/Objects/Cells/ExitCell.java</file>
+            <file>file:/C:/Users/Soberanis/Documents/NetBeansProjects/EscapaDelLaberinto/src/Backend/Objects/Player.java</file>
+            <file>file:/C:/Users/Soberanis/Documents/NetBeansProjects/EscapaDelLaberinto/src/Backend/Objects/Position.java</file>
+            <file>file:/C:/Users/Soberanis/Documents/NetBeansProjects/EscapaDelLaberinto/src/frontend/GameView.java</file>
+            <file>file:/C:/Users/Soberanis/Documents/NetBeansProjects/EscapaDelLaberinto/src/frontend/GameViewController.java</file>
+        </group>
     </open-files>
 </project-private>
